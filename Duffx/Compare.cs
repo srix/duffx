@@ -72,10 +72,12 @@ namespace Duffx
             int iterateCount = srcWords.Length < tgtWords.Length ? srcWords.Length : tgtWords.Length;
             for (int i = 0; i < iterateCount; i++)
             {
-                if (srcWords[i] == tgtWords[i])
+                if (srcWords[i] != tgtWords[i])
                 {
-                    matchCnt++;                    
+                    break;
                 }
+
+                matchCnt++;                    
                 if (matchCnt == matches)
                     break;
             }
