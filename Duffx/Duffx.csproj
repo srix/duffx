@@ -73,6 +73,12 @@
     <Compile Include="Layers.Designer.cs">
       <DependentUpon>Layers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Processors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Processors.Designer.cs">
+      <DependentUpon>Processors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layers.resx">
       <DependentUpon>Layers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processors.resx">
+      <DependentUpon>Processors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
