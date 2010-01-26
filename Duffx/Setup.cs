@@ -17,6 +17,7 @@ namespace Duffx
         FilesDirs fileDirs;
         Filters filtersForm;
         Duplicates duplicates;
+        Processors processors;
 
         public Setup()
         {
@@ -33,6 +34,9 @@ namespace Duffx
 
             duplicates = new Duplicates();
             tabPageDuplicates.Controls.Add(duplicates);
+
+            processors = new Processors();
+            tabPageProcessors.Controls.Add(processors);
 
 
         }
