@@ -13,18 +13,31 @@ namespace Duffx
 
     public partial class Setup : Form
     {
-
+        Layers layers;
+        FilesDirs fileDirs;
+        Filters filtersForm;
+        Duplicates duplicates;
 
         public Setup()
         {
             InitializeComponent();
+
+            layers = new Layers();
+            tabPageLayers.Controls.Add(layers);
+
+            fileDirs = new FilesDirs();
+            tabPageFilesDirs.Controls.Add(fileDirs);
+
+            filtersForm = new Filters();
+            tabPageFilters.Controls.Add(filtersForm);
+
+            duplicates = new Duplicates();
+            tabPageDuplicates.Controls.Add(duplicates);
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog1.ShowDialog();
-            textBox1.Text = folderBrowserDialog1.SelectedPath;
-        }
+
 
         private void findDuplicate_Click(object sender, EventArgs e)
         {
@@ -32,20 +45,16 @@ namespace Duffx
 
           
             //TODO:Put in background thread
-            ArrayList files = CollectFileNames.GetFiles(textBox1.Text);
+            ArrayList files = fileDirs.GetFiles();
 
-            Compare compare = new Compare();
-//            DelegateCompare dlgCompareFileName = compare.CompareFileName;
-            DelegateCompare dlgCompareFileName = compare.CompareSimilarFileName;
-            ArrayList dupFiles = compare.Run(files, dlgCompareFileName);
+            ArrayList dupFiles = layers.GetduplicateFiles(files);
 
-            ResultForm resForm = new ResultForm(dupFiles);
-            resForm.ShowDialog();
-
+            duplicates.ClearList();
+            duplicates.ShowDuplicates(dupFiles);
             
         }
 
-        
+
 
 
     }
