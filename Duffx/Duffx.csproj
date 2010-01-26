@@ -49,6 +49,30 @@
   <ItemGroup>
     <Compile Include="CollectFileNames.cs" />
     <Compile Include="Compare.cs" />
+    <Compile Include="Duplicates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Duplicates.Designer.cs">
+      <DependentUpon>Duplicates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesDirs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilesDirs.Designer.cs">
+      <DependentUpon>FilesDirs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Filters.Designer.cs">
+      <DependentUpon>Filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layers.Designer.cs">
+      <DependentUpon>Layers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +81,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Duplicates.resx">
+      <DependentUpon>Duplicates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesDirs.resx">
+      <DependentUpon>FilesDirs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filters.resx">
+      <DependentUpon>Filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers.resx">
+      <DependentUpon>Layers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
@@ -64,9 +100,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResultForm.resx">
-      <DependentUpon>ResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,12 +114,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="ResultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResultForm.Designer.cs">
-      <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
